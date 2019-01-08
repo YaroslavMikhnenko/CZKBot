@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chat:</strong>
+  <%= @user.chat_id %>
+</p>
+
+<p>
+  <strong>Stage:</strong>
+  <%= @user.stage %>
+</p>
+
+<h2>Answers</h2>
+<ul>
+  <% @answers.each do |ans| %>
+    <li><%= ans.question.text %> : <%= ans.text %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
